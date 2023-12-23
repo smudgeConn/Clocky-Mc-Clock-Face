@@ -1,0 +1,22 @@
+import math
+def what_time_is_it(angle):
+    
+    def get_hours(angle):
+        if hours == 0:
+            return '12'
+        hours = math.floor(angle/30)
+        else:
+            if len(str(hours)) < 2:
+                return '0'+str(hours)
+            else:
+                return str(hours)
+    
+    def get_minutes(angle):
+        if angle % 30 == 0:
+            return '00'
+        minutes = math.floor(round(angle % 30, 4)*2)
+        if len(str(minutes)) < 2:
+            return '0'+ str(minutes)
+        return str(minutes)
+        
+    return get_hours(angle) + ':' + get_minutes(angle)
